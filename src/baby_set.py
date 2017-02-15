@@ -39,8 +39,8 @@ class BabySet:
 		try:
 			self.__data.remove(elem)
 		
-		except Exception as e:
-			print 'problemo here.'
+		except ValueError:
+			raise KeyError
 
 	def get(self, elem):
 		"""Returns element elem from the set. 
@@ -54,7 +54,7 @@ class BabySet:
 	
 	def clear(self):
 		"""Remove all elements from the set."""
-		self.__data = [-1]
+		self.__data = []
 
 	def size(self):
 		"""Returns the size of the set."""
